@@ -8,6 +8,16 @@ Aplicação construída durante a matéria de Projeto III.
 
 A aplicação consiste em uma rede social voltada para o público gamer, projetada para aprimorar sua experiência de jogo. Um espaço dinâmico para jogadores que buscam mergulhar ainda mais fundo no universo dos videogames.
 
+## Layout:
+
+# Tela Login
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/74220856-006b-4e90-8648-3b30c62317d5)
+
+# Tela Dashboard - ADM
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/bba6037c-2a6d-4ba6-a14a-95dab9f8e456)
+
 ## Modelo entidade relacionamento
 
 
