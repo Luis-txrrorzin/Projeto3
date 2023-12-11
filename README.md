@@ -6,8 +6,6 @@ Projeto III.
 
 Aplicação construída durante a matéria de Projeto III.
 
-A aplicação consiste em uma rede social voltada para o público gamer, projetada para aprimorar sua experiência de jogo. Um espaço dinâmico para jogadores que buscam mergulhar ainda mais fundo no universo dos videogames.
-
 ## Layout:
 
 # Tela *Login*
