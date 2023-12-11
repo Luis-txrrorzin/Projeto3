@@ -8,6 +8,10 @@ Aplicação construída durante a matéria de Projeto III.
 
 ## Layout:
 
+# Tela *Cadastrar* 
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/c7563ce9-e606-45fc-8a93-aba399c33543)
+
 # Tela *Login*
 
 ![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/74220856-006b-4e90-8648-3b30c62317d5)
