@@ -10,13 +10,30 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 
 ## Layout:
 
-# Tela Login
+# Tela *Login*
 
 ![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/74220856-006b-4e90-8648-3b30c62317d5)
 
-# Tela Dashboard - ADM
+# Tela *Dashboard - ADM*
 
 ![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/bba6037c-2a6d-4ba6-a14a-95dab9f8e456)
+
+# Tela *Usuários*.
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/1de778f8-d245-48b2-b50b-f88fb454d922)
+
+# Tela *Dashboard - USU*
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/46556ad7-c3ed-4d0d-8181-9dc39d1c02bf)
+
+# Tela *Inserir*
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/046e8ed0-76b8-425b-9f7d-f9fa50510469)
+
+# Tela *Alterar*
+
+![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/12f99f89-5efd-4b28-909f-2a3b327af685)
+
 
 ## Modelo entidade relacionamento
 
