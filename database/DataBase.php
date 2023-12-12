@@ -1,7 +1,7 @@
 <?php
     class DataBase{
         private $host="Localhost";
-        private $db_name="gamershub";
+        private $db_name="projetotres";
         private $username="root";
         private $password="";
         public $conn;
