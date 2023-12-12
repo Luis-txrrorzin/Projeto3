@@ -39,6 +39,9 @@ Aplicação construída durante a matéria de Projeto III.
 
 ## Modelo entidade relacionamento
 
+![Relacionamento banco de dados](https://github.com/LuisiTxrror/Projeto3/assets/121141327/d7a6ad40-91a4-4b86-bf29-898cca83e1e2)
+
+
 
 # 🖱️ Tecnologias Utilizadas
 - PHP
