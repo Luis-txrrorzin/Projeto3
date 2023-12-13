@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Dez-2023 às 23:48
+-- Tempo de geração: 13-Dez-2023 às 02:02
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -24,15 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tarefa`
+-- Estrutura da tabela `tarefas`
 --
 
-CREATE TABLE `tarefa` (
+CREATE TABLE `tarefas` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
+  `nome` varchar(255) NOT NULL,
   `descricao` text DEFAULT NULL,
   `data_conclusao` date DEFAULT NULL,
-  `id_usuario` int(11) DEFAULT NULL
+  `usuario_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -43,20 +43,29 @@ CREATE TABLE `tarefa` (
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(255) DEFAULT NULL,
-  `senha` varchar(255) DEFAULT NULL
+  `nome` varchar(255) NOT NULL,
+  `Email` varchar(200) NOT NULL,
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `Email`, `senha`) VALUES
+(1, 'luis', 'luisseverodasilva17@gmail.com', '$2y$10$jjb2pssrZlOp6r4KeZQyruzWeoOqt1V72tvOwzwVGhPj1NbgmADy.'),
+(2, 'bernardo', '', '$2y$10$4/T1jD2N/I3quDuwZFF6nOaJj2N44oxGwob9s7BPc7MzhzF6UFr7W');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `tarefa`
+-- Índices para tabela `tarefas`
 --
-ALTER TABLE `tarefa`
+ALTER TABLE `tarefas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- Índices para tabela `usuarios`
@@ -65,14 +74,30 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tarefas`
+--
+ALTER TABLE `tarefas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Restrições para despejos de tabelas
 --
 
 --
--- Limitadores para a tabela `tarefa`
+-- Limitadores para a tabela `tarefas`
 --
-ALTER TABLE `tarefa`
-  ADD CONSTRAINT `tarefa_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
+ALTER TABLE `tarefas`
+  ADD CONSTRAINT `tarefas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
