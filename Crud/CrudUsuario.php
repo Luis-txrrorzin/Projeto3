@@ -26,7 +26,7 @@
             $stmt->execute([$nome, $email, $hashed_password]);
 
             echo "Registro bem-sucedido!";
-            header("refresh:4; url=../html/login.html");
+            header("refresh:4; url=../html/index.html");
         } catch (PDOException $e) {
             echo "Erro no registro: " . $e->getMessage();
         }
