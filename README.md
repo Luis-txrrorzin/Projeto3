@@ -37,7 +37,7 @@ Aplicação construída durante a matéria de Projeto III.
 ![image](https://github.com/LuisiTxrror/Projeto3/assets/121141327/12f99f89-5efd-4b28-909f-2a3b327af685)
 
 
-## Modelo entidade relacionamento
+## Modelo de entidade e relacionamento
 
 ![Relacionamento banco de dados](https://github.com/LuisiTxrror/Projeto3/assets/121141327/d7a6ad40-91a4-4b86-bf29-898cca83e1e2)
 
