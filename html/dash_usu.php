@@ -10,11 +10,12 @@
     <div class="topo">
     <button type="submit">INSERIR TAREFA</button>
 </div>
-
+    <?php
+    session_start();
+    ?>
     <div class="tarefas">
-    <h2>TAREFAS</h2>
+        <h1>Seja bem-vindo, <?php echo ''.$_SESSION['nome']; ?> </h1><br>
     </div>
-
     <table class="table-usu">
         <thead>
             <tr>
