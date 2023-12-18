@@ -23,7 +23,7 @@
         <br>
         <button type="submit">CADASTRAR</button>
     </form>
-    <p><a href="../html/index.html">Já tem uma conta? Faça login</a></p>
+    <p><a href="../Front/index.php">Já tem uma conta? Faça login</a></p>
 </body>
 </html>
 </html>

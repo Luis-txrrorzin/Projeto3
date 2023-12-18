@@ -28,7 +28,7 @@
                 $stmt->execute([$nome, $email, $hashed_password]);
 
                 echo "Registro bem-sucedido!";
-                header("refresh:4; url=../html/index.html");
+                header("refresh:4; url=../Front/index.php");
             } catch (PDOException $e) {
                 echo "Erro no registro: " . $e->getMessage();
             }
@@ -42,22 +42,16 @@
         
         $stmt->execute();
         $crudUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
-       //  var_dump($crudUsuario);
-       // exit();
 
-
-        if (isset($crudUsuario['Email']) && password_verify($senha, $crudUsuario['senha'])) {
+        if ($crudUsuario && password_verify($senha, $crudUsuario['senha'])) {
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
             $_SESSION['id'] = $crudUsuario['id'];
             $_SESSION['nome'] = $crudUsuario['nome'];
             $_SESSION['email'] = $crudUsuario['email'];
-            $_SESSION['tipo'] = $crudUsuario['tipo'];
             
-            
-            header("Location: ../html/dash_usu.html");
-            exit();
+            return true;
         } else {
             return false;
         }
@@ -66,4 +60,37 @@
     }
 }
 
+    public function isAdministrador($userId)
+    {
+        try {
+            $stmt = $this->conn->prepare("SELECT admin FROM " . $this->table_name . " WHERE id = :id");
+            $stmt->bindParam(':id', $userId);
+            $stmt->execute();
+            
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // Verifica se o usuário é um administrador (tipo 1 para admin)
+            return ($result['admin'] == 1);
+        } catch (PDOException $e) {
+            echo "Erro ao verificar se o usuário é administrador: " . $e->getMessage();
+            return false;
+        }
     }
+
+    public function getUsuario($userId)
+    {
+        try {
+            $stmt = $this->conn->prepare("SELECT nome, email, admin FROM " . $this->table_name . " WHERE id = :id");
+            $stmt->bindParam(':id', $userId);
+            $stmt->execute();
+            
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // Retorna um array associativo com os dados do usuário
+            return $result;
+        } catch (PDOException $e) {
+            echo "Erro ao obter dados do usuário: " . $e->getMessage();
+            return false;
+        }
+    }
+}

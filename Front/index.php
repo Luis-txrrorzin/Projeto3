@@ -16,7 +16,7 @@
         <br>
         <button type="submit">ENTRAR</button>
     </form>
-    <p><a href="../html/cadastrar.html">Cadastrar</a></p>
+    <p><a href="../Front/cadastrar.php">Cadastrar</a></p>
     <p><a href="">Esqueci minha senha</a></p>
 </body>
 </html>
