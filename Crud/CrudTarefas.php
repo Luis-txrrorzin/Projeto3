@@ -52,4 +52,17 @@ class CrudTarefas
             echo "Erro ao excluir tarefa: " . $e->getMessage();
         }
     }
+
+    public function adicionarUsuarioNaTarefa($id_tarefa, $id_usuario)
+    {
+        try {
+            $query = "UPDATE " . $this->table_name . " SET id_usuario = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$id_usuario, $id_tarefa]);
+
+            echo "Usuário adicionado à tarefa com sucesso!";
+        } catch (PDOException $e) {
+            echo "Erro ao adicionar usuário à tarefa: " . $e->getMessage();
+        }
+    }
 }
