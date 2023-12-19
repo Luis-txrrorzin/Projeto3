@@ -1,3 +1,11 @@
+<?php
+include_once "../database/DataBase.php";
+include_once "../Crud/CrudTarefas.php"; // Certifique-se de incluir o arquivo do CRUD de tarefas aqui
+
+$database = new DataBase();
+$db = $database->getConnection();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -10,50 +18,26 @@
   
   <body>
     <form class="botoes-adm">
-      <button type="submit">INSERIR TAREFA</button>
+      <a href="../Front/inserir.php">Inserir Tarefa</a>
 
-      <button type="submit">INSERIR USUÁRIO</button>
-
-      <button type="submit">USUÁRIOS</button>
+      <a href="../Front/usuarios.php">Usuarios</a>
     </form>
 
     <table class="table-adm">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tarefa</th>
-                <th>Descrição</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Desenvolver Front</td>
-                <td>Descrição</td>
-                <td> <button type="submit">
-                  <img src="../img/lata-de-lixo.png" alt="lixo">
-                 </button> 
-
-                 <button type="submit">
-                  <img src="../img/ferramenta-lapis.png" alt="lixo">
-                 </button> </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Criação do Banco</td>
-                <td>Descrição</td>
-                <td>
-                <button type="submit">
-                  <img src="../img/lata-de-lixo.png" alt="lixo">
-                 </button> 
-
-                 <button type="submit">
-                  <img src="../img/ferramenta-lapis.png" alt="lixo">
-                 </button> 
-                
-                  
-                </td>
-            </tr>
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Tarefa</th>
+              <th>Descrição</th>
+              <th>Ação</th>
+          </tr>
+      </thead>
+      <tbody>
+          <?php
+          $crudTarefas = new CrudTarefas($db);
+          $crudTarefas->listarTarefas();
+          ?>
+      </tbody>
+    </table>
   </body>
 </html>

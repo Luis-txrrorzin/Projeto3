@@ -1,6 +1,6 @@
 <?php
 include_once "../database/DataBase.php";
-include_once "CrudTarefas.php"; // Certifique-se de incluir o arquivo do CRUD de tarefas aqui
+include_once "../Crud/CrudTarefas.php"; // Certifique-se de incluir o arquivo do CRUD de tarefas aqui
 
 $database = new DataBase();
 $db = $database->getConnection();
