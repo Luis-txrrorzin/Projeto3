@@ -21,19 +21,25 @@
             <tr>
                 <th>ID</th>
                 <th>Tarefa</th>
+                <th>Descrição</th>
                 <th>Data</th>
+                
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>1</td>
                 <td>Desenvolver Front</td>
+                <th>Descrição</th>
                 <td>01/12</td>
+                
             </tr>
             <tr>
                 <td>2</td>
                 <td>Criação do Banco</td>
+                <th>Descrição</th>
                 <td>15/09</td>
+                
             </tr>
 </body>
 </html>

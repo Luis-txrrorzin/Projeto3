@@ -22,6 +22,7 @@
             <tr>
                 <th>ID</th>
                 <th>Tarefa</th>
+                <th>Descrição</th>
                 <th>Ação</th>
             </tr>
         </thead>
@@ -29,12 +30,30 @@
             <tr>
                 <td>1</td>
                 <td>Desenvolver Front</td>
-                <td>A E</td>
+                <td>Descrição</td>
+                <td> <button type="submit">
+                  <img src="../img/lata-de-lixo.png" alt="lixo">
+                 </button> 
+
+                 <button type="submit">
+                  <img src="../img/ferramenta-lapis.png" alt="lixo">
+                 </button> </td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Criação do Banco</td>
-                <td>A D</td>
+                <td>Descrição</td>
+                <td>
+                <button type="submit">
+                  <img src="../img/lata-de-lixo.png" alt="lixo">
+                 </button> 
+
+                 <button type="submit">
+                  <img src="../img/ferramenta-lapis.png" alt="lixo">
+                 </button> 
+                
+                  
+                </td>
             </tr>
   </body>
 </html>
