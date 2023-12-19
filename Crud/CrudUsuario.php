@@ -66,14 +66,18 @@
             $stmt = $this->conn->prepare("SELECT admin FROM " . $this->table_name . " WHERE id = :id");
             $stmt->bindParam(':id', $userId);
             $stmt->execute();
-            
+
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Verifica se o usuário é um administrador (tipo 1 para admin)
-            return ($result['admin'] == 1);
+            // Verifica se a consulta retornou uma linha
+            if ($result !== false && isset($result['admin'])) {
+                return ['admin' => $result['admin']];
+            } else {
+                return ['admin' => 0]; // Retorna 0 se o usuário não for encontrado ou admin não estiver definido
+            }
         } catch (PDOException $e) {
             echo "Erro ao verificar se o usuário é administrador: " . $e->getMessage();
-            return false;
+            return ['admin' => 0];
         }
     }
 
@@ -91,6 +95,18 @@
         } catch (PDOException $e) {
             echo "Erro ao obter dados do usuário: " . $e->getMessage();
             return false;
+        }
+    }
+
+    public function listarUsuarios()
+    {
+        try {
+            $stmt = $this->conn->query("SELECT id, nome, email, admin FROM " . $this->table_name);
+            $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $usuarios;
+        } catch (PDOException $e) {
+            echo "Erro ao listar usuários: " . $e->getMessage();
+            return [];
         }
     }
 }

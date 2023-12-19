@@ -28,27 +28,13 @@ class CrudTarefas
         }
     }
 
-    public function alterarTarefa($id_tarefa, $nome, $descricao, $data_conclusao)
-    {
-        try {
-            $query = "UPDATE " . $this->table_name . " SET nome = ?, SET descricao = ?, data_conclusao = ? WHERE id = ?";
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute([$nome, $data_conclusao, $id_tarefa]);
-
-            echo "Tarefa alterada com sucesso!";
-        } catch (PDOException $e) {
-            echo "Erro ao alterar tarefa: " . $e->getMessage();
-        }
-    }
-
     public function excluirTarefa($id_tarefa)
     {
         try {
-            $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
+            $query = "DELETE FROM " . $this->table_name . " WHERE id = :id_tarefa";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$id_tarefa]);
-
-            echo "Tarefa excluída com sucesso!";
+            $stmt->bindParam(':id_tarefa', $id_tarefa);
+            $stmt->execute();
         } catch (PDOException $e) {
             echo "Erro ao excluir tarefa: " . $e->getMessage();
         }
@@ -66,6 +52,7 @@ class CrudTarefas
             echo "Erro ao adicionar usuário à tarefa: " . $e->getMessage();
         }
     }
+    
     public function listarTarefas()
     {
         try {
@@ -83,7 +70,7 @@ class CrudTarefas
                 echo "<td>" . $row['nome'] . "</td>";
                 echo "<td>" . $row['descricao'] . "</td>";
                 echo "<td>";
-                echo "<a href='../php/deletar_tarefa.php?id=" . $row['id'] . "'><img src='../img/lata-de-lixo.png' alt='lixo'></a>";
+                echo "<a href='../php/deletar_tarefa.php?id_tarefa=" . $row['id'] . "'><img src='../img/lata-de-lixo.png' alt='lixo'></a>";
                 echo "<a href='../Front/alterar.php?id=" . $row['id'] . "'><img src='../img/ferramenta-lapis.png' alt='lapis'></a>";
                 echo "</td>";
                 echo "</tr>";
@@ -92,6 +79,32 @@ class CrudTarefas
             echo "Erro ao listar tarefas: " . $e->getMessage();
         }
     }
+
+
+    public function listarTarefasUsu()
+    {
+        try {
+            $query = "SELECT * FROM " . $this->table_name;
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+
+            // Obtém os resultados da consulta
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Exibe os resultados na tabela
+            foreach ($result as $row) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['nome'] . "</td>";
+                echo "<td>" . $row['descricao'] . "</td>";
+                echo "<td>" . $row['data_conclusao'] . "</td>";
+                echo "</tr>";
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao listar tarefas: " . $e->getMessage();
+        }
+    }
+
      public function listarUsuarios()
     {
         try {
@@ -118,6 +131,19 @@ class CrudTarefas
         } catch (PDOException $e) {
             echo "Erro ao obter tarefa por ID: " . $e->getMessage();
             return null;
+        }
+    }
+    public function alterarTarefa($id_tarefa, $nome, $descricao, $data_conclusao)
+    {
+        try {
+            $query = "UPDATE " . $this->table_name . " SET nome = ?, descricao = ?, data_conclusao = ? WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$nome, $descricao, $data_conclusao, $id_tarefa]);
+    
+            echo "Tarefa alterada com sucesso!";
+            header("refresh:4; url=../Front/dash_adm.php");
+        } catch (PDOException $e) {
+            echo "Erro ao alterar tarefa: " . $e->getMessage();
         }
     }
 }

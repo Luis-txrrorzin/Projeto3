@@ -17,6 +17,5 @@
         <button type="submit">ENTRAR</button>
     </form>
     <p><a href="../Front/cadastrar.php">Cadastrar</a></p>
-    <p><a href="">Esqueci minha senha</a></p>
 </body>
 </html>
