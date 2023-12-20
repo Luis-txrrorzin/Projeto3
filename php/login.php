@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userId = $_SESSION['id'];
         $isAdmin = $crudUsuario->isAdministrador($userId);
 
-        if ($isAdmin) {
+        if ($isAdmin === true) {
             // Se o usuário for administrador, redireciona para a tela de administrador
             header("Location: ../Front/dash_adm.php");
         } else {
