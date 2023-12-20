@@ -49,31 +49,25 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-  }
-
-  button {
-    width: 20%;
     padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+    background-color: #45a049;
+    border-radius: 6px;
+    width: 5%;
+    height: 1px;
+    margin-left: 48%;
   }
 
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  .botao-voltar a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
   }
-  
-  button:hover {
+
+  .botao-voltar a:hover {
+    text-decoration: underline;
     background-color: #45a049;
   }
+
+  
   
 

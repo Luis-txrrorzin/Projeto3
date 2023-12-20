@@ -1,72 +1,92 @@
 body {
-    background-color: #f4f4f4;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
-  }
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
 
-  h2 {
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+h2 {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .tarefas {
-    margin-left: 580px;
-    width: 25%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    background-color: gray;
-    color: white;
-  }
+.tarefas {
+  margin-left: 580px;
+  width: 25%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  background-color: gray;
+  color: white;
+}
 
-  /* ESTILIZAÇÃO DO BOTÃO */
+/* ESTILIZAÇÃO DO BOTÃO */
 
-  button {
-    background-color: #45a049;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin: 10px;
-    width: 20vh;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .topo {
-    margin-top: 50px;
-    padding: 10px;
-    width: 62%;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-  }
+button {
+  background-color: #45a049;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  width: 20vh;
+}
 
-  /* ESILIZAÇÃO DA TABELA */
+button:hover {
+  background-color: #45a049;
+}
 
-  table {
-    width: 30%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    border-radius: 10px; 
-    overflow: hidden; 
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.topo {
+  margin-top: 50px;
+  padding: 10px;
+  width: 9%;
+  margin-left: 52%;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4caf50; 
+  text-decoration: none;
+
+}
+
+.topo a {
+  color: #fff; 
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topo a:hover {
+  text-decoration: underline;
+  background-color: #45a049;
+}
+
+/* ESILIZAÇÃO DA TABELA */
+
+table {
+  width: 30%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-family: Arial, Helvetica, sans-serif;
+}

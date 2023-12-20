@@ -17,11 +17,10 @@ $db = $database->getConnection();
 
   
   <body>
-    <form class="botoes-adm">
-      <a href="../Front/inserir.php">Inserir Tarefa</a>
-
-      <a href="../Front/usuarios.php">Usuarios</a>
-    </form>
+  <form class="botoes-adm">
+    <a class="button" href="../Front/inserir.php">Inserir Tarefa</a>
+    <a class="button" href="../Front/usuarios.php">Usuários</a>
+</form>
 
     <table class="table-adm">
       <thead>

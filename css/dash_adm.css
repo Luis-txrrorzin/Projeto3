@@ -9,28 +9,38 @@ body {
   
   /* ESTILIZAÇÃO DOS BOTÕES */
   
-  button {
+  .button {
     background-color: #45a049;
     color: white;
     border-radius: 4px;
-    border: 1px solid black;
-    margin: 10px;
-  }
-  
-  .botoes-adm {
-    margin: 10px auto;
+    padding: 10px; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin: 0; 
+}
+
+.botoes-adm {
+    margin-top: 50px;
     padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
+    width: 15%;
+    margin-left: 52%;
+    margin-bottom: 30px;
+    border-radius: 6px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-  }
-  
-  button:hover {
+}
+
+.botoes-adm a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.botoes-adm a:hover {
+    text-decoration: underline;
     background-color: #45a049;
-  }
+}
+
   
   /* ESTILIZAÇÃO DA TABELA */
   
