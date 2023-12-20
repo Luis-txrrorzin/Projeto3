@@ -19,6 +19,6 @@
         <button type="submit">ENTRAR</button>
     </form>
     <p><a href="../Front/cadastrar.php">Cadastrar</a></p>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
 </body>
 </html>
