@@ -29,7 +29,8 @@ $db = $database->getConnection();
               <th>ID</th>
               <th>Tarefa</th>
               <th>Descrição</th>
-              <th>Ação</th>
+              <th>Endereço</th>
+              <th>Ações</th>
           </tr>
       </thead>
       <tbody>

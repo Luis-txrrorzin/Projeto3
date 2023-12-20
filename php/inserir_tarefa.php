@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tarefa = $_POST['tarefa'];
     $descricao = $_POST['descricao'];
     $data = $_POST['data'];
+    $endereco = $_POST['endereco'];
 
     // Adiciona a tarefa ao banco de dados
-    $crudTarefas->adicionarTarefa($tarefa, $descricao, $data);
+    $crudTarefas->adicionarTarefa($tarefa, $descricao, $data, $endereco);
 }
 ?>

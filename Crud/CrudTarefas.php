@@ -14,12 +14,12 @@ class CrudTarefas
         $this->conn = $db;
     }
 
-    public function adicionarTarefa($nome, $descricao, $data_conclusao)
+    public function adicionarTarefa($nome, $descricao, $data_conclusao, $endereco)
     {
         try {
-            $query = "INSERT INTO " . $this->table_name . " (nome, descricao, data_conclusao) VALUES (?, ?, ?)";
+            $query = "INSERT INTO " . $this->table_name . " (nome, descricao, data_conclusao, endereco) VALUES (?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$nome, $descricao, $data_conclusao]);
+            $stmt->execute([$nome, $descricao, $data_conclusao, $endereco]);
 
             echo "Tarefa adicionada com sucesso!";
             header("refresh:4; url=../Front/dash_adm.php");
@@ -69,6 +69,7 @@ class CrudTarefas
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nome'] . "</td>";
                 echo "<td>" . $row['descricao'] . "</td>";
+                echo "<td>" . $row['endereco'] . "</td>";
                 echo "<td>";
                 echo "<a href='../php/deletar_tarefa.php?id_tarefa=" . $row['id'] . "'><img src='../img/lata-de-lixo.png' alt='lixo'></a>";
                 echo "<a href='../Front/alterar.php?id=" . $row['id'] . "'><img src='../img/ferramenta-lapis.png' alt='lapis'></a>";
@@ -98,6 +99,7 @@ class CrudTarefas
                 echo "<td>" . $row['nome'] . "</td>";
                 echo "<td>" . $row['descricao'] . "</td>";
                 echo "<td>" . $row['data_conclusao'] . "</td>";
+                echo "<td>" . $row['endereco'] . "</td>";
                 echo "</tr>";
             }
         } catch (PDOException $e) {

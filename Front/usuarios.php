@@ -17,7 +17,6 @@
                     <th>Nome</th>
                     <th>Email</th>
                     <th>Admin</th>
-                    <th>Endereço</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,9 +38,6 @@
                     echo "<td>" . $usuario['nome'] . "</td>";
                     echo "<td>" . $usuario['email'] . "</td>";
                     echo "<td>" . ($usuario['admin'] == 1 ? 'Sim' : 'Não') . "</td>";
-                    echo "<td>";
-                        echo "<a href='../php/deletar_tarefa.php?id_tarefa=" . $row['id'] . "'><img src='../img/lata-de-lixo.png' alt='lixo'></a>";
-                    echo"</td>";
                     echo "</tr>";
                 }
                 ?>

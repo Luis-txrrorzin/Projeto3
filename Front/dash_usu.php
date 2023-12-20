@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="topo">
-        <a href="../Front/usuarios.php">Buscar Endereços</a>
+        <a href="../Front/endereco.php">Buscar Endereços</a>
     </div>
 
     <?php
@@ -27,6 +27,7 @@
                 <th>Tarefa</th>
                 <th>Descrição</th>
                 <th>Data</th>
+                <th>Endereço</th>
             </tr>
         </thead>
         <tbody>

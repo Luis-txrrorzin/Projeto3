@@ -19,6 +19,9 @@
     <label for="data">Data</label>
     <input type="text" name="data" placeholder="Adicione a data." required />
 
+    <label for="endereco">Endereço</label>
+    <input type="text" name="endereco" placeholder="Adicione o endereço da tarefa." required />
+
     <button type="submit">SALVAR</button>
   </form>
 </body>

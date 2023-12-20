@@ -3,6 +3,9 @@ include_once "../database/DataBase.php";
 $database = new DataBase();
 $db = $database->getConnection();
 
+include_once "../Crud/CrudTarefas.php"; // Certifique-se de incluir corretamente o arquivo que contém a classe CrudTarefas
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_tarefa = $_POST['id_tarefa'];
     $nome = $_POST['nome'];
